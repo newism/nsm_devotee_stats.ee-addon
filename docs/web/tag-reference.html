@@ -50,9 +50,17 @@
 <pre><kbd>&#123;description&#125;</kbd></pre>
 <p>The add-on description.</p>
 
+<h4 id="exp:nsm_devotee_stats:fetch.single_variables.rating_percentage" title="rating_percentage"><code>&#123;rating_percentage&#125;</code></h4>
+<pre><kbd>&#123;rating_percentage&#125;</kbd></pre>
+<p>The percentage value (0-100) of the add-on's rating on Devot:ee.</p>
+
+<h4 id="exp:nsm_devotee_stats:fetch.single_variables.rating_rounded" title="rating_rounded"><code>&#123;rating_rounded&#125;</code></h4>
+<pre><kbd>&#123;rating_rounded&#125;</kbd></pre>
+<p>The add-on rating rounded to a single decimal place (0.0-5.0).</p>
+
 <h4 id="exp:nsm_devotee_stats:fetch.single_variables.rating" title="rating"><code>&#123;rating&#125;</code></h4>
 <pre><kbd>&#123;rating&#125;</kbd></pre>
-<p>The decimal value of the add-on's rating on Devot:ee.</p>
+<p>The raw value (0.0000-5.0000) of the add-on's rating on Devot:ee.</p>
 
 <h4 id="exp:nsm_devotee_stats:fetch.single_variables.votes" title="votes"><code>&#123;votes&#125;</code></h4>
 <pre><kbd>&#123;votes&#125;</kbd></pre>
@@ -98,10 +106,10 @@
 	&#123;developer_links&#125;
 	&lt;li&gt;
 		&lt;ul&gt;
+			&lt;li&gt;&#123;developer_link_count&#125;: 1&lt;/li&gt;
 			&lt;li&gt;&#123;developer_link_site&#125;: mysite&lt;/li&gt;
 			&lt;li&gt;&#123;developer_link_title&#125;: Developer's website&lt;/li&gt;
 			&lt;li&gt;&#123;developer_link_url&#125;: www.mysite.com&lt;/li&gt;
-			&lt;li&gt;&#123;developer_link_count&#125;: 1&lt;/li&gt;
 		&lt;/ul&gt;
 	&lt;/li&gt;
 	&#123;/developer_links&#125;
@@ -113,10 +121,84 @@
 	&#123;categories&#125;
 	&lt;li&gt;
 		&lt;ul&gt;
-			&lt;li&gt;&#123;category&#125;: Module&lt;/li&gt;
 			&lt;li&gt;&#123;category_count&#125;: 1&lt;/li&gt;
+			&lt;li&gt;&#123;category&#125;: Module&lt;/li&gt;
 		&lt;/ul&gt;
 	&lt;/li&gt;
 	&#123;/categories&#125;
 &lt;/ul&gt;</kbd></pre>
 <p>Categories that the add-on is found in.</p>
+
+<h4 id="exp:nsm_devotee_stats:fetch.variable_pairs.compatibility" title="compatibility"><code>&#123;compatibility&#125;&hellip;&#123;/compatibility&#125;</code></h4>
+<pre><kbd>&lt;ul&gt;
+	&#123;compatibility&#125;
+	&lt;li&gt;
+		&lt;ul&gt;
+			&lt;li&gt;&#123;compatibility_count&#125;: 1&lt;/li&gt;
+			&lt;li&gt;&#123;compatibility_type&#125;: Multi-Site Manager&lt;/li&gt;
+			&lt;li&gt;&#123;compatibility_value&#125;: true&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	&#123;/compatibility&#125;
+&lt;/ul&gt;</kbd></pre>
+<p>List of add-on compatibility flags on Devot:ee.</p>
+
+<h4 id="exp:nsm_devotee_stats:fetch.variable_pairs.requirements" title="compatibility"><code>&#123;requirements&#125;&hellip;&#123;/requirements&#125;</code></h4>
+<pre><kbd>&lt;ul&gt;
+	&#123;requirements&#125;
+	&lt;li&gt;
+		&lt;ul&gt;
+			&lt;li&gt;&#123;requirement_count&#125;: 1&lt;/li&gt;
+			&lt;li&gt;&#123;requirement_type&#125;: jQuery for the Control Panel&lt;/li&gt;
+			&lt;li&gt;&#123;requirement_value&#125;: false&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	&#123;/requirements&#125;
+&lt;/ul&gt;</kbd></pre>
+<p>List of add-on requirement flags on Devot:ee.</p>
+
+<h4 id="exp:nsm_devotee_stats:fetch.variable_pairs.links" title="links"><code>&#123;links&#125;&hellip;&#123;/links&#125;</code></h4>
+<pre><kbd>&lt;ul&gt;
+	&#123;links&#125;
+	&lt;li&gt;
+		&lt;ul&gt;
+			&lt;li&gt;&#123;link_count&#125;: 1&lt;/li&gt;
+			&lt;li&gt;&#123;link_title&#125;: Add-on Test Link&lt;/li&gt;
+			&lt;li&gt;&#123;link_url&#125;: http://www.mysite.com&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	&#123;/links&#125;
+&lt;/ul&gt;</kbd></pre>
+<p>Website links assigned to the add-on.</p>
+
+<h4 id="exp:nsm_devotee_stats:fetch.variable_pairs.hooks" title="hooks"><code>&#123;hooks&#125;&hellip;&#123;/hooks&#125;</code></h4>
+<pre><kbd>&lt;ul&gt;
+	&#123;hooks&#125;
+	&lt;li&gt;
+		&lt;ul&gt;
+			&lt;li&gt;&#123;hook_count&#125;: 1&lt;/li&gt;
+			&lt;li&gt;&#123;hook&#125;: entry_submission_end&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	&#123;/hooks&#125;
+&lt;/ul&gt;</kbd></pre>
+<p>Extension hooks that the add-on uses.</p>
+
+<h4 id="exp:nsm_devotee_stats:fetch.variable_pairs.reviews" title="reviews"><code>&#123;reviews&#125;&hellip;&#123;/reviews&#125;</code></h4>
+<pre><kbd>&lt;ul&gt;
+	&#123;reviews&#125;
+	&lt;li&gt;
+		&lt;ul&gt;
+			&lt;li&gt;&#123;review_count&#125;: 1&lt;/li&gt;
+			&lt;li&gt;&#123;review_author_name&#125;: John Doe&lt;/li&gt;
+			&lt;li&gt;&#123;review_author_url&#125;: /members/profile/userxxxxx&lt;/li&gt;
+			&lt;li&gt;&#123;review_author_photo&#125;: http://www.devot-ee.com/assets/images/member_photos/profile_image.jpg&lt;/li&gt;
+			&lt;li&gt;&#123;review_date&#125;: 12.31.2012&lt;/li&gt;
+			&lt;li&gt;&#123;review&#125;: Review content&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	&#123;/reviews&#125;
+&lt;/ul&gt;</kbd></pre>
+<p>Reviews that have been submitted for the add-on by Devot:ee users.</p>
+
+

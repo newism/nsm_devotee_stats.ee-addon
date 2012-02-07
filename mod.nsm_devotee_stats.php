@@ -87,6 +87,14 @@ class Nsm_devotee_stats {
 		}
 		unset($data['developer']);
 		
+		// adjust rating
+		$tmp['rating'] = $data['rating'];
+		unset($data['rating']);
+		$data['rating_percentage'] = ceil($tmp['rating'] * 20);
+		$data['rating_rounded'] = number_format($tmp['rating'], 1);
+		$data['rating'] = $tmp['rating'];
+		unset($tmp['rating']);
+		
 		// adjust category data
 		$tmp['categories'] = $data['categories'];
 		unset($data['categories']);
