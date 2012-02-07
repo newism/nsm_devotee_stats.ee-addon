@@ -8,14 +8,14 @@ require PATH_THIRD.'nsm_devotee_stats/config.php';
  * @package			NsmDevoteeStats
  * @version			0.0.1
  * @author			Leevi Graham <http://leevigraham.com>
+ * @author			Iain Saxon <http://newism.com.au>
  * @copyright 		Copyright (c) 2007-2010 Newism <http://newism.com.au>
  * @license 		Commercial - please see LICENSE file included with this distribution
  * @link			http://ee-garage.com/nsm-devotee-stats
  * @see				http://expressionengine.com/public_beta/docs/development/modules.html#update_file
  */
 
-class Nsm_devotee_stats_upd
-{
+class Nsm_devotee_stats_upd {
 	public  $version = NSM_DEVOTEE_STATS_VERSION;
 	public  $addon_id = NSM_DEVOTEE_STATS_ADDON_ID;
 	private $has_cp_backend = false;
