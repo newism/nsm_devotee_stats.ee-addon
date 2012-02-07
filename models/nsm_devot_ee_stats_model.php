@@ -8,7 +8,7 @@
  * @author			Leevi Graham <http://leevigraham.com>
  * @copyright 		Copyright (c) 2007-2010 Newism <http://newism.com.au>
  * @license 		Commercial - please see LICENSE file included with this distribution
- * @link			http://expressionengine-addons.com/nsm-example-addon
+ * @link			http://ee-garage.com/nsm-devot-ee-stats
  * @see				http://codeigniter.com/user_guide/general/models.html
  **/
 class Nsm_devot_ee_stats_model extends CI_Model {
