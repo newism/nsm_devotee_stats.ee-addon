@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-require PATH_THIRD.'nsm_devot_ee_stats/config.php';
+require PATH_THIRD.'nsm_devotee_stats/config.php';
 
 /**
  * NSM Devot:ee Stats Fieldtype
@@ -10,11 +10,11 @@ require PATH_THIRD.'nsm_devot_ee_stats/config.php';
  * @author			Leevi Graham <http://leevigraham.com>
  * @copyright 		Copyright (c) 2007-2010 Newism <http://newism.com.au>
  * @license 		Commercial - please see LICENSE file included with this distribution
- * @link			http://ee-garage.com/nsm-devot-ee-stats
+ * @link			http://ee-garage.com/nsm-devotee-stats
  * @see				http://expressionengine.com/public_beta/docs/development/fieldtypes.html
  */
 
-class Nsm_devot_ee_stats_ft extends EE_Fieldtype
+class Nsm_devotee_stats_ft extends EE_Fieldtype
 {
 	/**
 	 * Field info - Required
@@ -23,11 +23,11 @@ class Nsm_devot_ee_stats_ft extends EE_Fieldtype
 	 * @var array
 	 */
 	public $info = array(
-		'version'		=> NSM_DEVOT_EE_STATS_VERSION,
-		'name'			=> NSM_DEVOT_EE_STATS_NAME
+		'version'		=> NSM_DEVOTEE_STATS_VERSION,
+		'name'			=> NSM_DEVOTEE_STATS_NAME
 	);
 
-	public $addon_id		= NSM_DEVOT_EE_STATS_ADDON_ID;
+	public $addon_id		= NSM_DEVOTEE_STATS_ADDON_ID;
 
 	/**
 	 * The fieldtype global settings array
@@ -174,13 +174,13 @@ class Nsm_devot_ee_stats_ft extends EE_Fieldtype
 			// We need to to do this becuase this field may have been loaded by Matrix or Low variables
 			return $this->EE->load->_ci_load(array(
 				'_ci_vars' => $vars,
-				'_ci_path' => PATH_THIRD . 'nsm_devot_ee_stats/views/fieldtype/field.php',
+				'_ci_path' => PATH_THIRD . 'nsm_devotee_stats/views/fieldtype/field.php',
 				'_ci_return' => true
 			));
 		}
 		else
 		{
-			$this->EE->load->add_package_path(PATH_THIRD . 'nsm_devot_ee_stats');
+			$this->EE->load->add_package_path(PATH_THIRD . 'nsm_devotee_stats');
 			return $this->EE->load->view('fieldtype/field', $vars, TRUE);
 		}
 

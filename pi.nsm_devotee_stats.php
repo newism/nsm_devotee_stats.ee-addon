@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-require PATH_THIRD.'nsm_devot_ee_stats/config.php';
+require PATH_THIRD.'nsm_devotee_stats/config.php';
 
 /**
  * NSM Devot:ee Stats Plugin
@@ -12,7 +12,7 @@ require PATH_THIRD.'nsm_devot_ee_stats/config.php';
  * @author			Leevi Graham <http://leevigraham.com>
  * @copyright 		Copyright (c) 2007-2010 Newism <http://newism.com.au>
  * @license 		Commercial - please see LICENSE file included with this distribution
- * @link			http://ee-garage.com/nsm-devot-ee-stats
+ * @link			http://ee-garage.com/nsm-devotee-stats
  * @see 			http://expressionengine.com/public_beta/docs/development/plugins.html
  */
 
@@ -22,15 +22,15 @@ require PATH_THIRD.'nsm_devot_ee_stats/config.php';
  * @var array
  */
 $plugin_info = array(
-	'pi_name' => NSM_DEVOT_EE_STATS_NAME,
-	'pi_version' => NSM_DEVOT_EE_STATS_VERSION,
+	'pi_name' => NSM_DEVOTEE_STATS_NAME,
+	'pi_version' => NSM_DEVOTEE_STATS_VERSION,
 	'pi_author' => 'Leevi Graham',
 	'pi_author_url' => 'http://leevigraham.com/',
 	'pi_description' => 'Plugin description',
 	'pi_usage' => "Refer to the included README"
 );
 
-class Nsm_devot_ee_stats{
+class Nsm_devotee_stats{
 
 	/**
 	 * The return string
@@ -39,7 +39,7 @@ class Nsm_devot_ee_stats{
 	 */
 	var $return_data = "";
 
-	function Nsm_devot_ee_stats() {
+	function Nsm_devotee_stats() {
 		$EE =& get_instance();
 		$this->return_data = "NSM Devot:ee Stats Output";
 	}

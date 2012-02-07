@@ -6,7 +6,7 @@
  *
  * !! All text and textarea settings must use form_prep($value); !!
  *
- * @package Nsm_devot_ee_stats
+ * @package Nsm_devotee_stats
  * @version 1.0.0
  * @author Leevi Graham <http://leevigraham.com.au>
  * @copyright Copyright (c) 2007-2010 Newism
@@ -45,7 +45,7 @@ $EE =& get_instance();
 			<tbody>
 				<tr>
 					<th scope="row">Enable?</th>
-					<td><?= $EE->nsm_devot_ee_stats_helper->yesNoRadioGroup($input_prefix."[enabled]", $data["enabled"]); ?></td>
+					<td><?= $EE->nsm_devotee_stats_helper->yesNoRadioGroup($input_prefix."[enabled]", $data["enabled"]); ?></td>
 				</tr>
 			</tbody>
 		</table>

@@ -1,6 +1,6 @@
 <?php if (! defined('BASEPATH')) die('No direct script access allowed');
 
-require PATH_THIRD.'nsm_devot_ee_stats/config.php';
+require PATH_THIRD.'nsm_devotee_stats/config.php';
 
 /**
  * NSM Devot:ee Stats Tag methods
@@ -10,13 +10,13 @@ require PATH_THIRD.'nsm_devot_ee_stats/config.php';
  * @author			Leevi Graham <http://leevigraham.com>
  * @copyright 		Copyright (c) 2007-2010 Newism <http://newism.com.au>
  * @license 		Commercial - please see LICENSE file included with this distribution
- * @link			http://ee-garage.com/nsm-devot-ee-stats
+ * @link			http://ee-garage.com/nsm-devotee-stats
  * @see				http://expressionengine.com/public_beta/docs/development/modules.html#control_panel_file
  */
 
-class Nsm_devot_ee_stats {
+class Nsm_devotee_stats {
 
-	private $addon_id = NSM_DEVOT_EE_STATS_ADDON_ID;
+	private $addon_id = NSM_DEVOTEE_STATS_ADDON_ID;
 
 	public $test_mode = false;
 	
@@ -30,7 +30,7 @@ class Nsm_devot_ee_stats {
 	 **/
 	public function __construct() {
 		// set the addon id
-		$this->addon_id = NSM_DEVOT_EE_STATS_ADDON_ID;
+		$this->addon_id = NSM_DEVOTEE_STATS_ADDON_ID;
 	
 		// Create a singleton reference
 		$EE =& get_instance();
@@ -199,7 +199,7 @@ class Nsm_devot_ee_stats {
 	private function _getAddonData($addon_id)
 	{
 		$data = false;
-		$url = 'http://devot-ee.com/add-ons/data-json/' . $addon_id;
+		$url = 'http://devotee.com/add-ons/data-json/' . $addon_id;
 		// is test mode set or cache expired?
 		if ($this->test_mode || ! $json = $this->_readCache(md5($url))) {
 			$json = $this->_doCurl($url);
@@ -242,7 +242,7 @@ class Nsm_devot_ee_stats {
 	 **/
 	private function _createCacheFile($data, $key)
 	{
-		$cache_path = APPPATH.'cache/' . NSM_DEVOT_EE_STATS_ADDON_ID;
+		$cache_path = APPPATH.'cache/' . NSM_DEVOTEE_STATS_ADDON_ID;
 		$filepath = $cache_path ."/". $key;
 	
 		if (! is_dir($cache_path)) {
@@ -277,7 +277,7 @@ class Nsm_devot_ee_stats {
 	private function _readCache($key)
 	{
 		$cache = FALSE;
-		$cache_path = APPPATH.'cache/' . NSM_DEVOT_EE_STATS_ADDON_ID;
+		$cache_path = APPPATH.'cache/' . NSM_DEVOTEE_STATS_ADDON_ID;
 		$filepath = $cache_path ."/". $key;
 
 		if ( ! file_exists($filepath)) {

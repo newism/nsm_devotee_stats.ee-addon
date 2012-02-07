@@ -5,7 +5,7 @@
 	 */
 ?>
 <?= form_open(
-		Nsm_devot_ee_stats_mcp::_route(
+		Nsm_devotee_stats_mcp::_route(
 			'index',
 			array('param' => 'some_value'),
 			false

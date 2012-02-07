@@ -1,6 +1,6 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-require PATH_THIRD.'nsm_devot_ee_stats/config.php';
+require PATH_THIRD.'nsm_devotee_stats/config.php';
 
 /**
  * Install / Uninstall and updates the modules
@@ -10,14 +10,14 @@ require PATH_THIRD.'nsm_devot_ee_stats/config.php';
  * @author			Leevi Graham <http://leevigraham.com>
  * @copyright 		Copyright (c) 2007-2010 Newism <http://newism.com.au>
  * @license 		Commercial - please see LICENSE file included with this distribution
- * @link			http://ee-garage.com/nsm-devot-ee-stats
+ * @link			http://ee-garage.com/nsm-devotee-stats
  * @see				http://expressionengine.com/public_beta/docs/development/modules.html#update_file
  */
 
-class Nsm_devot_ee_stats_upd
+class Nsm_devotee_stats_upd
 {
-	public  $version = NSM_DEVOT_EE_STATS_VERSION;
-	public  $addon_id = NSM_DEVOT_EE_STATS_ADDON_ID;
+	public  $version = NSM_DEVOTEE_STATS_VERSION;
+	public  $addon_id = NSM_DEVOTEE_STATS_ADDON_ID;
 	private $has_cp_backend = false;
 	private $has_publish_fields = false;
 	private $has_tabs = false;

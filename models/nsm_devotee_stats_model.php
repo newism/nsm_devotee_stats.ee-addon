@@ -8,17 +8,17 @@
  * @author			Leevi Graham <http://leevigraham.com>
  * @copyright 		Copyright (c) 2007-2010 Newism <http://newism.com.au>
  * @license 		Commercial - please see LICENSE file included with this distribution
- * @link			http://ee-garage.com/nsm-devot-ee-stats
+ * @link			http://ee-garage.com/nsm-devotee-stats
  * @see				http://codeigniter.com/user_guide/general/models.html
  **/
-class Nsm_devot_ee_stats_model extends CI_Model {
+class Nsm_devotee_stats_model extends CI_Model {
 
 	/**
 	 * The model table
 	 * 
 	 * @var string
 	 */
-	private static $table_name = "nsm_devot_ee_stats";
+	private static $table_name = "nsm_devotee_stats";
 
 	/**
 	 * The model table fields

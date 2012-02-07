@@ -1,6 +1,6 @@
 <?php
 
-require PATH_THIRD.'nsm_devot_ee_stats/config.php';
+require PATH_THIRD.'nsm_devotee_stats/config.php';
 
 /**
  * NSM Devot:ee Stats Display
@@ -10,21 +10,21 @@ require PATH_THIRD.'nsm_devot_ee_stats/config.php';
  * $this->EE->load->library("{$this->addon_id}_addon", null, $this->addon_id);
  *
  * #  Add the custom field stylesheet to the header 
- * $this->EE->nsm_devot_ee_stats_helper->addCSS('custom_field.css');
+ * $this->EE->nsm_devotee_stats_helper->addCSS('custom_field.css');
  * 
  * # Load the JS for the iframe
- * $this->EE->nsm_devot_ee_stats_helper->addJS('custom_field.js');
- * $this->EE->nsm_devot_ee_stats_helper->addJS('../lib/jquery.cookie.js');
+ * $this->EE->nsm_devotee_stats_helper->addJS('custom_field.js');
+ * $this->EE->nsm_devotee_stats_helper->addJS('../lib/jquery.cookie.js');
  * 
  * @package			NsmDevoteeStats
  * @version			0.0.1
  * @author			Leevi Graham <http://leevigraham.com>
  * @copyright 		Copyright (c) 2007-2010 Newism <http://newism.com.au>
  * @license 		Commercial - please see LICENSE file included with this distribution
- * @link			http://ee-garage.com/nsm-devot-ee-stats
+ * @link			http://ee-garage.com/nsm-devotee-stats
  */
 
-class Nsm_devot_ee_stats_helper{
+class Nsm_devotee_stats_helper{
 
 	/**
 	 * The addon ID

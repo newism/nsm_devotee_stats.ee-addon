@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-require PATH_THIRD.'nsm_devot_ee_stats/config.php';
+require PATH_THIRD.'nsm_devotee_stats/config.php';
 
 /**
  * NSM Devot:ee Stats CP 
@@ -10,13 +10,13 @@ require PATH_THIRD.'nsm_devot_ee_stats/config.php';
  * @author			Leevi Graham <http://leevigraham.com>
  * @copyright 		Copyright (c) 2007-2010 Newism <http://newism.com.au>
  * @license 		Commercial - please see LICENSE file included with this distribution
- * @link			http://ee-garage.com/nsm-devot-ee-stats
+ * @link			http://ee-garage.com/nsm-devotee-stats
  * @see				http://expressionengine.com/public_beta/docs/development/modules.html#control_panel_file
  */
 
-class Nsm_devot_ee_stats_mcp{
+class Nsm_devotee_stats_mcp{
 
-	public static $addon_id = NSM_DEVOT_EE_STATS_ADDON_ID;
+	public static $addon_id = NSM_DEVOTEE_STATS_ADDON_ID;
 
 	private $pages = array(
 		"index"
@@ -33,7 +33,7 @@ class Nsm_devot_ee_stats_mcp{
 
 	public function _renderLayout($page, $out = FALSE) {
 		$this->EE->cp->set_variable('cp_page_title', $this->EE->lang->line("{$page}_page_title"));
-		$this->EE->cp->set_breadcrumb(self::_route(), $this->EE->lang->line('nsm_devot_ee_stats_module_name'));
+		$this->EE->cp->set_breadcrumb(self::_route(), $this->EE->lang->line('nsm_devotee_stats_module_name'));
 
 		$nav = array();
 		foreach ($this->pages as $page) {
@@ -57,7 +57,7 @@ class Nsm_devot_ee_stats_mcp{
 		$params = array_merge(array(
 			'C' =>  'addons_modules',
 			'M' => 'show_module_cp',
-			'module' => NSM_DEVOT_EE_STATS_ADDON_ID,
+			'module' => NSM_DEVOTEE_STATS_ADDON_ID,
 			'method' => $method
 		), $params);
 		return $base . http_build_query($params);

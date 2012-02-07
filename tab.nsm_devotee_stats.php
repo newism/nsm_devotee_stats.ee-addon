@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-require PATH_THIRD.'nsm_devot_ee_stats/config.php';
+require PATH_THIRD.'nsm_devotee_stats/config.php';
 
 /**
  * NSM Devot:ee Stats Tab
@@ -10,11 +10,11 @@ require PATH_THIRD.'nsm_devot_ee_stats/config.php';
  * @author			Leevi Graham <http://leevigraham.com>
  * @copyright 		Copyright (c) 2007-2010 Newism <http://newism.com.au>
  * @license 		Commercial - please see LICENSE file included with this distribution
- * @link			http://ee-garage.com/nsm-devot-ee-stats
+ * @link			http://ee-garage.com/nsm-devotee-stats
  * @see				http://expressionengine.com/public_beta/docs/development/modules.html#tab_file
  */
 
-class Nsm_devot_ee_stats_tab
+class Nsm_devotee_stats_tab
 {
 	/**
 	 * This function creates the fields that will be displayed on the publish page. It must return $settings, a multidimensional associative array specifying the display settings and values associated with each of your custom fields.
@@ -41,10 +41,10 @@ class Nsm_devot_ee_stats_tab
 	public function publish_tabs($channel_id, $entry_id = FALSE) {
 
 		// Uncomment to hide tab.
-		// if(!class_exists('Nsm_devot_ee_stats_ext'))
-		// 	require(PATH_THIRD . "nsm_devot_ee_stats/ext.nsm_devot_ee_stats.php");
+		// if(!class_exists('Nsm_devotee_stats_ext'))
+		// 	require(PATH_THIRD . "nsm_devotee_stats/ext.nsm_devotee_stats.php");
 		// 
-		// $ext = new Nsm_devot_ee_stats_ext();
+		// $ext = new Nsm_devotee_stats_ext();
 		// if(
 		// 	! isset($ext->settings['channels'][$channel_id])
 		// 	|| empty($ext->settings['channels'][$channel_id]['show_tab'])
@@ -52,11 +52,11 @@ class Nsm_devot_ee_stats_tab
 		// 	return array();
 
 		$EE =& get_instance();
-		$EE->lang->loadfile('nsm_devot_ee_stats');
+		$EE->lang->loadfile('nsm_devotee_stats');
 
 		$field_settings[] = array(
-			'field_id' => 'field_1', // This must match a key in Nsm_devot_ee_stats_upd::tabs()
-			'field_type' => 'nsm_devot_ee_stats',
+			'field_id' => 'field_1', // This must match a key in Nsm_devotee_stats_upd::tabs()
+			'field_type' => 'nsm_devotee_stats',
 			'field_label' => 'NSM Devot:ee Stats Fieldtype',
 			'field_instructions' => '',
 			'field_required' => '',
