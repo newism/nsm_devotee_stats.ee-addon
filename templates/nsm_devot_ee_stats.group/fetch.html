@@ -10,7 +10,9 @@
 		<li>
 			&#123;developer_links&#125;&hellip;&#123;/developer_links&#125;:
 			(&#123;developer_links_total&#125;: {developer_links_total})
-			{if developer_links_total > 0}
+			{if developer_links_total == 0}
+				No developer links
+			{if:else}
 			<ul>
 				{developer_links}
 				<li>
@@ -31,6 +33,9 @@
 		<li>
 			&#123;categories&#125;&hellip;&#123;/categories&#125;:
 			(&#123;categories_total&#125;: {categories_total})
+			{if categories_total == 0}
+				No categories assigned
+			{if:else}
 			<ul>
 				{categories}
 				<li>
@@ -39,6 +44,7 @@
 				</li>
 				{/categories}
 			</ul>
+			{/if}
 		</li>
 		<!-- PARTY -->
 		<li>&#123;party&#125;: {party}</li>
@@ -49,6 +55,9 @@
 		<li>
 			&#123;compatibility&#125;&hellip;&#123;/compatibility&#125;:
 			(&#123;compatibility_total&#125;: {compatibility_total})
+			{if compatibility_total == 0}
+				No compatibility notices
+			{if:else}
 			<ul>
 				{compatibility}
 				<li>
@@ -60,11 +69,15 @@
 				</li>
 				{/compatibility}
 			</ul>
+			{/if}
 		</li>
 		<!-- REQUIREMENTS -->
 		<li>
 			&#123;requirements&#125;&hellip;&#123;/requirements&#125;:
 			(&#123;requirements_total&#125;: {requirements_total})
+			{if requirements_total == 0}
+				No requirements found
+			{if:else}
 			<ul>
 				{requirements}
 				<li>
@@ -76,6 +89,7 @@
 				</li>
 				{/requirements}
 			</ul>
+			{/if}
 		</li>
 		<!-- INFO -->
 		<li>&#123;summary&#125;: {summary}</li>
@@ -84,6 +98,9 @@
 		<li>
 			&#123;links&#125;&hellip;&#123;/links&#125;:
 			(&#123;links_total&#125;: {links_total})
+			{if links_total == 0}
+				No links found
+			{if:else}
 			<ul>
 				{links}
 				<li>
@@ -95,16 +112,21 @@
 				</li>
 				{/links}
 			</ul>
+			{/if}
 		</li>
 		<!-- HOOKS -->
 		<li>
 			&#123;hooks&#125;&hellip;&#123;/hooks&#125;:
 			(&#123;hooks_total&#125;: {hooks_total})
+			{if hooks_total == 0}
+				No links found
+			{if:else}
 			<ul>
 				{hooks}
 				<li>&#123;hook&#125;: {hook} (&#123;hook_count&#125;: {hook_count})</li>
 				{/hooks}
 			</ul>
+			{/if}
 		</li>
 		<!-- STATS -->
 		<li>&#123;rating&#125;: {rating}</li>
