@@ -15,10 +15,10 @@ $lang = array(
 
 	/* Module */
 	'nsm_devot_ee_stats' => 'NSM Devot:ee Stats',
-	'nsm_devot_ee_stats_module_name' => 'NSM Devot:ee Stats: Module name',
-	'nsm_devot_ee_stats_module_description' => 'NSM Devot:ee Stats: Module description',
+	'nsm_devot_ee_stats_module_name' => 'NSM Devot:ee Stats',
+	'nsm_devot_ee_stats_module_description' => 'Retrieve add-on statistics from Devot:ee',
 
-	'index_page_title' => 'NSM Devot:ee Stats: Dashboard',
+	'index_page_title' => 'NSM Devot:ee Stats',
 	'index_nav_title' => 'Dashboard',
 
 	/* Extension */

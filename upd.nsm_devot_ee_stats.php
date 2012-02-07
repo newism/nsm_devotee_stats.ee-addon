@@ -18,9 +18,9 @@ class Nsm_devot_ee_stats_upd
 {
 	public  $version = NSM_DEVOT_EE_STATS_VERSION;
 	public  $addon_id = NSM_DEVOT_EE_STATS_ADDON_ID;
-	private $has_cp_backend = true;
-	private $has_publish_fields = true;
-	private $has_tabs = true;
+	private $has_cp_backend = false;
+	private $has_publish_fields = false;
+	private $has_tabs = false;
 
 	private $actions = false;
 	private $models = false;
