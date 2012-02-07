@@ -72,11 +72,15 @@ class Nsm_devot_ee_stats {
 		// adjust developer data
 		$data['developer_name'] = $data['developer']['developer_name'];
 		$data['developer_alt'] = $data['developer']['developer_alt'];
-		$data['developer_links'] = array();
+		unset($data['developer_links']);
 		$data['developer_links_total'] = count($data['developer']['developer_links']);
+		$data['developer_links'] = false;
 		if ($data['developer_links_total'] > 0) {
+			$data['developer_links'] = array();
 			for ($i=0, $m=$data['developer_links_total']; $i<$m; $i+=1) {
-				$data['developer_links'][$i]['developer_link'] = $data['developer']['developer_links'][$i];
+				$data['developer_links'][$i]['developer_link_site'] = $data['developer']['developer_links'][$i]['site'];
+				$data['developer_links'][$i]['developer_link_title'] = $data['developer']['developer_links'][$i]['title'];
+				$data['developer_links'][$i]['developer_link_url'] = $data['developer']['developer_links'][$i]['url'];
 				$data['developer_links'][$i]['developer_link_count'] = ($i + 1);
 			}
 		}
@@ -85,9 +89,10 @@ class Nsm_devot_ee_stats {
 		// adjust category data
 		$tmp['categories'] = $data['categories'];
 		unset($data['categories']);
-		$data['categories'] = array();
 		$data['categories_total'] = count($tmp['categories']);
+		$data['categories'] = false;
 		if ($data['categories_total'] > 0) {
+			$data['categories'] = array();
 			for ($i=0, $m=$data['categories_total']; $i<$m; $i+=1) {
 				$data['categories'][$i]['category'] = $tmp['categories'][$i];
 				$data['categories'][$i]['category_count'] = ($i + 1);
@@ -103,9 +108,10 @@ class Nsm_devot_ee_stats {
 		// adjust compatibility data
 		$tmp['compatibility'] = $data['compatibility'];
 		unset($data['compatibility']);
-		$data['compatibility'] = array();
 		$data['compatibility_total'] = count($tmp['compatibility']);
+		$data['compatibility'] = false;
 		if ($data['compatibility_total'] > 0) {
+			$data['compatibility'] = array();
 			$tmp_count = 0;
 			foreach ($tmp['compatibility'] as $compatibility_type => $compatibility_value) {
 				$data['compatibility'][$tmp_count]['compatibility_type'] = $compatibility_type;
@@ -119,9 +125,10 @@ class Nsm_devot_ee_stats {
 		// adjust requirements data
 		$tmp['requirements'] = $data['requirements'];
 		unset($data['requirements']);
-		$data['requirements'] = array();
 		$data['requirements_total'] = count($tmp['requirements']);
+		$data['requirements'] = false;
 		if ($data['requirements_total'] > 0) {
+			$data['requirements'] = array();
 			$tmp_count = 0;
 			foreach ($tmp['requirements'] as $requirement_type => $requirement_value) {
 				$data['requirements'][$tmp_count]['requirement_type'] = $requirement_type;
@@ -135,9 +142,10 @@ class Nsm_devot_ee_stats {
 		// adjust links data
 		$tmp['links'] = $data['links'];
 		unset($data['links']);
-		$data['links'] = array();
 		$data['links_total'] = count($tmp['links']);
+		$data['links'] = false;
 		if ($data['links_total'] > 0) {
+			$data['links'] = array();
 			for ($i=0, $m=$data['links_total']; $i<$m; $i+=1) {
 				$data['links'][$i]['link_title'] = $tmp['links'][$i]['title'];
 				$data['links'][$i]['link_url'] = $tmp['links'][$i]['url'];
@@ -149,9 +157,10 @@ class Nsm_devot_ee_stats {
 		// adjust hooks data
 		$tmp['hooks'] = $data['hooks'];
 		unset($data['hooks']);
-		$data['hooks'] = array();
 		$data['hooks_total'] = count($tmp['hooks']);
+		$data['hooks'] = false;
 		if ($data['hooks_total'] > 0) {
+			$data['hooks'] = array();
 			for ($i=0, $m=$data['hooks_total']; $i<$m; $i+=1) {
 				$data['hooks'][$i]['hook'] = $tmp['hooks'][$i];
 				$data['hooks'][$i]['hook_count'] = ($i + 1);
@@ -162,9 +171,10 @@ class Nsm_devot_ee_stats {
 		// adjust reviews data
 		$tmp['reviews'] = $data['reviews'];
 		unset($data['reviews']);
-		$data['reviews'] = array();
 		$data['reviews_total'] = count($tmp['reviews']);
+		$data['reviews'] = false;
 		if ($data['reviews_total'] > 0) {
+			$data['reviews'] = array();
 			for ($i=0, $m=$data['reviews_total']; $i<$m; $i+=1) {
 				$data['reviews'][$i]['review_author_name'] = $tmp['reviews'][$i]['author_name'];
 				$data['reviews'][$i]['review_author_url'] = $tmp['reviews'][$i]['author_url'];
@@ -179,15 +189,17 @@ class Nsm_devot_ee_stats {
 		// clean up
 		unset($tmp, $tmp_count);
 		
-		return $EE->TMPL->parse_variables_row($EE->TMPL->tagdata, $data);
+		$tagdata = $EE->TMPL->tagdata;
+		$tagdata = $EE->functions->prep_conditionals($tagdata, $data);
+		$tagdata = $EE->TMPL->parse_variables_row($tagdata, $data);
+		
+		return $tagdata;
 	}
 	
 	private function _getAddonData($addon_id)
 	{
 		$data = false;
-		
 		$url = 'http://devot-ee.com/add-ons/data-json/' . $addon_id;
-		
 		// is test mode set or cache expired?
 		if ($this->test_mode || ! $json = $this->_readCache(md5($url))) {
 			$json = $this->_doCurl($url);

@@ -1,0 +1,133 @@
+{exp:nsm_devot_ee_stats:fetch
+	addon="{segment_3}"
+}
+	<ul>
+		<!-- TITLE -->
+		<li>&#123;title&#125;: {title}</li>
+		<!-- DEVELOPER -->
+		<li>&#123;developer_name&#125;: {developer_name}</li>
+		<li>&#123;developer_alt&#125;: {developer_alt}</li>
+		<li>
+			&#123;developer_links&#125;&hellip;&#123;/developer_links&#125;:
+			(&#123;developer_links_total&#125;: {developer_links_total})
+			{if developer_links_total > 0}
+			<ul>
+				{developer_links}
+				<li>
+					<ul>
+						<li>&#123;developer_link_site&#125;: {developer_link_site}</li>
+						<li>&#123;developer_link_title&#125;: {developer_link_title}</li>
+						<li>&#123;developer_link_url&#125;: {developer_link_url}</li>
+						<li>&#123;developer_link_count&#125;: {developer_link_count}</li>
+					</ul>
+				</li>
+				{/developer_links}
+			</ul>
+			{/if}
+		</li>
+		<!-- LICENCE -->
+		<li>&#123;license&#125;: {license}</li>
+		<!-- CATEGORIES -->
+		<li>
+			&#123;categories&#125;&hellip;&#123;/categories&#125;:
+			(&#123;categories_total&#125;: {categories_total})
+			<ul>
+				{categories}
+				<li>
+					&#123;category&#125;: {category}
+					(&#123;category_count&#125;: {category_count})
+				</li>
+				{/categories}
+			</ul>
+		</li>
+		<!-- PARTY -->
+		<li>&#123;party&#125;: {party}</li>
+		<!-- VERSIONS -->
+		<li>&#123;version_support_ee1&#125;: {version_support_ee1}</li>
+		<li>&#123;version_support_ee2&#125;: {version_support_ee2}</li>
+		<!-- COMPATIBILITY -->
+		<li>
+			&#123;compatibility&#125;&hellip;&#123;/compatibility&#125;:
+			(&#123;compatibility_total&#125;: {compatibility_total})
+			<ul>
+				{compatibility}
+				<li>
+					<ul>
+						<li>&#123;compatibility_count&#125;: {compatibility_count}</li>
+						<li>&#123;compatibility_type&#125;: {compatibility_type}</li>
+						<li>&#123;compatibility_value&#125;: {compatibility_value}</li>
+					</ul>
+				</li>
+				{/compatibility}
+			</ul>
+		</li>
+		<!-- REQUIREMENTS -->
+		<li>
+			&#123;requirements&#125;&hellip;&#123;/requirements&#125;:
+			(&#123;requirements_total&#125;: {requirements_total})
+			<ul>
+				{requirements}
+				<li>
+					<ul>
+						<li>&#123;requirement_count&#125;: {requirement_count}</li>
+						<li>&#123;requirement_type&#125;: {requirement_type}</li>
+						<li>&#123;requirement_value&#125;: {requirement_value}</li>
+					</ul>
+				</li>
+				{/requirements}
+			</ul>
+		</li>
+		<!-- INFO -->
+		<li>&#123;summary&#125;: {summary}</li>
+		<li>&#123;description&#125;: {description}</li>
+		<!-- LINKS -->
+		<li>
+			&#123;links&#125;&hellip;&#123;/links&#125;:
+			(&#123;links_total&#125;: {links_total})
+			<ul>
+				{links}
+				<li>
+					<ul>
+						<li>&#123;link_count&#125;: {link_count}</li>
+						<li>&#123;link_title&#125;: {link_title}</li>
+						<li>&#123;link_url&#125;: {link_url}</li>
+					</ul>
+				</li>
+				{/links}
+			</ul>
+		</li>
+		<!-- HOOKS -->
+		<li>
+			&#123;hooks&#125;&hellip;&#123;/hooks&#125;:
+			(&#123;hooks_total&#125;: {hooks_total})
+			<ul>
+				{hooks}
+				<li>&#123;hook&#125;: {hook} (&#123;hook_count&#125;: {hook_count})</li>
+				{/hooks}
+			</ul>
+		</li>
+		<!-- STATS -->
+		<li>&#123;rating&#125;: {rating}</li>
+		<li>&#123;votes&#125;: {votes}</li>
+		<li>&#123;favorites&#125;: {favorites}</li>
+		<!-- REVIEWS -->
+		<li>
+			&#123;reviews&#125;&hellip;&#123;/reviews&#125;:
+			(&#123;reviews_total&#125;: {reviews_total})
+			<ul>
+				{reviews}
+				<li>
+					<ul>
+						<li>&#123;review_count&#125;: {review_count}</li>
+						<li>&#123;review_author_name&#125;: {review_author_name}</li>
+						<li>&#123;review_author_url&#125;: {review_author_url}</li>
+						<li>&#123;review_author_photo&#125;: {review_author_photo}</li>
+						<li>&#123;review_date&#125;: {review_date}</li>
+						<li>&#123;review&#125;: {review}</li>
+					</ul>
+				</li>
+				{/reviews}
+			</ul>
+		</li>
+	</ul>
+{/exp:nsm_devot_ee_stats:fetch}
