@@ -200,7 +200,7 @@ class Nsm_devotee_stats {
 	private function _getAddonData($addon_id)
 	{
 		$data = false;
-		$url = 'http://devotee.com/add-ons/data-json/' . $addon_id;
+		$url = 'http://devot-ee.com/add-ons/data-json/' . $addon_id;
 		// is test mode set or cache expired?
 		if ($this->test_mode || ! $json = $this->_readCache(md5($url))) {
 			$json = $this->_doCurl($url);
