@@ -181,7 +181,7 @@ class Nsm_devotee_stats {
 		$tmp['reviews'] = $data['reviews'];
 		unset($data['reviews']);
 		$data['reviews_total'] = count($tmp['reviews']);
-		$data['reviews'] = false;
+		$data['reviews'] = array();
 		if ($data['reviews_total'] > 0) {
 			$data['reviews'] = array();
 			for ($i=0, $m=$data['reviews_total']; $i<$m; $i+=1) {
