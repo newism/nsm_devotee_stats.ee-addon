@@ -1,7 +1,5 @@
 <?php if (! defined('BASEPATH')) die('No direct script access allowed');
 
-require PATH_THIRD.'nsm_devotee_stats/config.php';
-
 /**
  * NSM Devot:ee Stats Tag methods
  *
@@ -17,7 +15,7 @@ require PATH_THIRD.'nsm_devotee_stats/config.php';
 
 class Nsm_devotee_stats {
 
-	private $addon_id = NSM_DEVOTEE_STATS_ADDON_ID;
+	private $addon_id, $api_key, $secret_key;
 
 	public $test_mode = false;
 	
@@ -30,8 +28,16 @@ class Nsm_devotee_stats {
 	 * @return void
 	 **/
 	public function __construct() {
+		
+		$path = dirname(realpath(__FILE__));
+		require_once $path.'/config'.EXT;
+		
 		// set the addon id
 		$this->addon_id = NSM_DEVOTEE_STATS_ADDON_ID;
+		
+		// set api keys
+		$this->api_key = $config['api_key'];
+		$this->secret_key = $config['secret_key'];
 	
 		// Create a singleton reference
 		$EE =& get_instance();
@@ -79,7 +85,7 @@ class Nsm_devotee_stats {
 		if ($data['developer_links_total'] > 0) {
 			$data['developer_links'] = array();
 			for ($i=0, $m=$data['developer_links_total']; $i<$m; $i+=1) {
-				$data['developer_links'][$i]['developer_link_site'] = $data['developer']['developer_links'][$i]['site'];
+				$data['developer_links'][$i]['developer_link_site'] = isset($data['developer']['developer_links'][$i]['site']) ? $data['developer']['developer_links'][$i]['site'] : '';
 				$data['developer_links'][$i]['developer_link_title'] = $data['developer']['developer_links'][$i]['title'];
 				$data['developer_links'][$i]['developer_link_url'] = $data['developer']['developer_links'][$i]['url'];
 				$data['developer_links'][$i]['developer_link_count'] = ($i + 1);
@@ -208,7 +214,7 @@ class Nsm_devotee_stats {
 	private function _getAddonData($addon_id)
 	{
 		$data = false;
-		$url = 'http://devot-ee.com/add-ons/data-json/' . $addon_id;
+		$url = 'http://devot-ee.com/add-ons/data-json/' . $addon_id . '?api_key=' . $this->api_key . '&secret_key=' . $this->secret_key;
 		// is test mode set or cache expired?
 		if ($this->test_mode || ! $json = $this->_readCache(md5($url))) {
 			$json = $this->_doCurl($url);
