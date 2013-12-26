@@ -22,3 +22,6 @@ $config['name'] 	= NSM_DEVOTEE_STATS_NAME;
 $config["version"] 	= NSM_DEVOTEE_STATS_VERSION;
 
 $config['nsm_addon_updater']['versions_xml'] = 'http://ee-garage.com/nsm-devotee-stats/release-notes/feed';
+
+$config['api_key'] = "";
+$config['secret_key'] = "";
