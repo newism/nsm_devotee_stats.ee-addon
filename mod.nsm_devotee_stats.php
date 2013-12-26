@@ -191,10 +191,11 @@ class Nsm_devotee_stats {
 		if ($data['reviews_total'] > 0) {
 			$data['reviews'] = array();
 			for ($i=0, $m=$data['reviews_total']; $i<$m; $i+=1) {
+				$review_date = date_create_from_format('m.j.Y', $tmp['reviews'][$i]['date']);
 				$data['reviews'][$i]['review_author_name'] = $tmp['reviews'][$i]['author_name'];
 				$data['reviews'][$i]['review_author_url'] = $tmp['reviews'][$i]['author_url'];
 				$data['reviews'][$i]['review_author_photo'] = $tmp['reviews'][$i]['author_photo'];
-				$data['reviews'][$i]['review_date'] = $tmp['reviews'][$i]['date'];
+				$data['reviews'][$i]['review_date'] = $review_date->format('U');
 				$data['reviews'][$i]['review'] = $tmp['reviews'][$i]['review'];
 				$data['reviews'][$i]['review_count'] = ($i + 1);
 			}
